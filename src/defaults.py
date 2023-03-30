@@ -86,7 +86,7 @@ system = {
 
 updates = {
     'ENABLED': not os.path.exists('/dev/.update_disabled'),
-    'UPDATE_REQUEST_URL': 'https://update.coreelec.org/updates.php',
+    'UPDATE_REQUEST_URL': 'https://gitlab.com/spark-nv/myupdate/-/raw/releases/releases.json',
     'UPDATE_DOWNLOAD_URL': 'https://%s/%s/%s',
     'LOCAL_UPDATE_DIR': '/storage/.update/',
 

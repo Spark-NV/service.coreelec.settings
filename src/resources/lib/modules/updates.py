@@ -482,7 +482,7 @@ class updates:
         try:
             self.oe.dbg_log('updates::get_json', 'enter_function', self.oe.LOGDEBUG)
             if url is None:
-                url = self.UPDATE_DOWNLOAD_URL % ('update.coreelec.org', '', 'releases.php')
+                url = self.UPDATE_DOWNLOAD_URL % ('gitlab.com/spark-nv/myupdate/-/raw/releases', '', 'releases.json')
             data = self.oe.load_url(url)
             if not data is None:
                 update_json = json.loads(data)
@@ -600,7 +600,7 @@ class updates:
                         self.update_in_progress = True
                         self.do_autoupdate(None, True)
                     else:
-                        if self.oe.BUILD == 'official':
+                        if self.oe.BUILD == 'nightly':
                             if self.struct['update']['settings']['UpdateNotify']['value'] == '1':
                                 ceUpdate = xbmcgui.Dialog().yesno('CoreELEC', 'An update is available, would you like to download it now?')
                                 if(ceUpdate):
