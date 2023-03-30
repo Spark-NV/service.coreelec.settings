@@ -600,7 +600,7 @@ class updates:
                         self.update_in_progress = True
                         self.do_autoupdate(None, True)
                     else:
-                        if self.oe.BUILD == 'nightly':
+                        if self.oe.BUILD == 'official':
                             if self.struct['update']['settings']['UpdateNotify']['value'] == '1':
                                 ceUpdate = xbmcgui.Dialog().yesno('CoreELEC', 'An update is available, would you like to download it now?')
                                 if(ceUpdate):
